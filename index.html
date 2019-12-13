@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LifeSketch</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css" type="text/css" />
+</head>
+<body>
+    <div id="app">
+        <div id="main-view">
+            <div id="title">
+                <h1>{{title}}</h1>
+            </div>
+            <div id="layers" :class="{focusOne: activeFocus}">
+                <div v-for="layer in layerEls" :class="{layer: true, active: layer.active}" :style="{width: `${layer.width}%`, paddingTop: `${layer.width}%`, color: layer.color, backgroundColor: layer.color}">
+                    <div v-if="!layer.active">
+                        <div class="title">
+                            <span v-for="char in layer.titleChars" :style="{transform: `rotate(${char.rot}deg)`}">{{char.c}}</span>
+                        </div>    
+                        <div  @click="activateLayer(layer)" id="open"></div>
+                    </div>
+                        
+                    <div v-else class="info">
+                        <h2>{{layer.title}}</h2>
+                        <div class="body">{{layer.body}}</div>
+                        <div v-if="activeFocus" id="back" @click="deactivateLayer(layer)">&times;</div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="index.js"></script>
+
+</body>
+</html>
