@@ -6,13 +6,19 @@ var app = new Vue({
         layers: [
             {
                 title:'Language is Connection',
-                color: 'skyblue',
+                color: 'rgb(60, 164, 232)',
                 body: 'This is another body',
                 active: false,
             },
             {
                 title:'Language is Shared',
-                color: '#4fe054',
+                color: 'skyblue',
+                body: 'This is a body.',
+                active: false,
+            },
+            {
+                title:'Language is Alive',
+                color: '#7ae83c',
                 body: 'This is a body.',
                 active: false,
             },
@@ -23,12 +29,14 @@ var app = new Vue({
                 active: false,
             },
             {
-                title:'Language stems from Intelligence',
+                title:'Language is Eternal',
                 color: 'white',
                 body: 'This is a body.',
                 active: false,
             }
         ],
+        mainBgDefault: '#fff',
+        mainBg: '#fff',
         charWidth: 16,
         activeLayer: {},
         activeFocus: false,
@@ -41,6 +49,7 @@ var app = new Vue({
                 this.activeLayer = layer;
                 this.activeLayer.active = true;
                 this.activeFocus = true;
+                this.mainBg = this.activeLayer.color;
             } 
         },
         deactivateLayer(layer) {
@@ -48,6 +57,7 @@ var app = new Vue({
             {
                 layer.active = false;
                 this.activeFocus = false;
+                this.mainBg = this.mainBgDefault;
             } 
         },
     },
@@ -55,13 +65,13 @@ var app = new Vue({
     computed: {
         layerEls() {
             return this.layers.map( layer => {
-                layer.width = 7 + (this.layers.length - this.layers.indexOf(layer)) * 93 / (this.layers.length)
+                layer.width = 15 + (this.layers.length - this.layers.indexOf(layer)) * 85 / (this.layers.length)
 
                 let circ = document.getElementById('main-view').offsetWidth * Math.PI * (layer.width/100);
                 console.log(circ)
                 let charDeg = 360 / (circ / this.charWidth);
 
-                layer.offRot = (layer.title.length * charDeg) / 2;
+                layer.offRot = ((layer.title.length-1) * charDeg) / 2;
 
                 layer.titleChars = Array.from(layer.title).map( (c, i) => {
                     let rot = -layer.offRot + (charDeg * i);

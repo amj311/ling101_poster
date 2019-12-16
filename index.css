@@ -18,11 +18,12 @@
 
 body {
     margin: 0;
-    /* background: #000;
-    color: #fff; */
-    background: fff;
-    color: #000;
+    background: rgb(60, 164, 232);
+    color: #fff;
     font-family: sans-serif;
+    background-image: url(connections_bg.png);
+    background-size: cover;
+    background-position: center;
 }
 
 #main-view {
@@ -36,7 +37,8 @@ body {
 }
 
 #title {
-    text-align: center;;
+    text-align: center;
+    text-shadow: 0 0 3px #000a;
 }
 
 #layers {
@@ -85,7 +87,7 @@ div#layers.focusOne .layer:not(.active) {
     color: #fff;
     font-family: Monaco, MonoSpace;
     font-size: 1.5em;
-    height: calc(100% - .5em);
+    height: calc(100% - .2em);
     position: absolute;
     /* width: 20px; */
     left: 0;
