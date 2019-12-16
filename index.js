@@ -7,31 +7,31 @@ var app = new Vue({
             {
                 title:'Language is Connection',
                 color: 'rgb(60, 164, 232)',
-                body: 'This is another body',
+                body: 'Everyone desires a connection with someone else, and language is the way we create connections. Physical connection, verbal connection, or even simply emotional connection all require language of some sort.',
                 active: false,
             },
             {
                 title:'Language is Shared',
                 color: 'skyblue',
-                body: 'This is a body.',
+                body: 'If there was only one single intelligence in the entire universe, would it develop a langauge? There would be no need for communication of any sort. Language exists because intellegences want to engage with each other.',
                 active: false,
             },
             {
                 title:'Language is Alive',
                 color: '#7ae83c',
-                body: 'This is a body.',
+                body: 'Language is fluid and evolving. Every time a word of a language is spoken, it shifts ever so slightly.',
                 active: false,
             },
             {
                 title:'Language is Learned',
                 color: 'gold',
-                body: 'This is a body.',
+                body: 'Everyone has to acquire language. While the desrire to communicate is inherent in intelligence, the use of language requires that we learn it\'s rules and methods in each new medium.',
                 active: false,
             },
             {
                 title:'Language is Eternal',
                 color: 'white',
-                body: 'This is a body.',
+                body: 'Wherever and whenever there exists intelligence, language will develop as a medium for communication.',
                 active: false,
             }
         ],
